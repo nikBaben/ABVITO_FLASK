@@ -35,7 +35,6 @@ class Article(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(140), nullable=False)
     body = db.Column(db.Text, nullable=False)
-    category_id = db.Column(db.Integer, db.ForeignKey('category.id'))
     created_at = db.Column(db.DateTime(True), nullable=False, server_default=db.func.now(tz='UTC'))
     author_id = db.Column(db.Integer, db.ForeignKey('goga.id'))
     address = db.Column(db.String(80), nullable=False)

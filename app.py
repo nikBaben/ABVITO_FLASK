@@ -77,8 +77,7 @@ def create_article():
         title = article_form.title.data
         body = article_form.body.data
         author_id = current_user.name
-        category_id = article_form.category_id.data
-        article = Article(title=title, body=body,category_id=category_id,author_id=author_id )
+        article = Article(title=title, body=body,author_id=author_id )
         db.session.add(article)
         db.session.commit()
         return redirect('/')
