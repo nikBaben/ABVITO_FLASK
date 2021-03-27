@@ -49,24 +49,6 @@ def about():
     return render_template("about.html")
 
 
-#@app.route("/add", methods=['GET','POST'])
-#def add():
-  #  if request.method == "POST":
-    #    title = request.form['name_item']
-      #  about = request.form['about']
-      #  adress = request.form['adress']
-
-       # item = Item(about = about, name_item = title, adress = adress)
-      #  try:
-         #   db.session.add(item)
-         #   db.session.commit()
-         #   return redirect("/")
-       # except:
-           # return "Получилась ошибка"
-   # else:
-      #  return render_template('add.html')
-
-
 
 
 @app.route('/add', methods=['GET', 'POST'])
