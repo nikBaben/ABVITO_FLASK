@@ -58,8 +58,10 @@ def create_article():
     if article_form.validate_on_submit():
         title = article_form.title.data
         body = article_form.body.data
+        address = article_form.address.data
+        category_id = article_form.category_id.data
         author_id = current_user.name
-        article = Article(title=title, body=body,author_id=author_id )
+        article = Article(title=title, body=body,address=address,category_id=category_id,author_id=author_id )
         db.session.add(article)
         db.session.commit()
         return redirect('/')
@@ -116,6 +118,11 @@ def search():
 def category_articles(category_id):
     category = Category.query.get_or_404(category_id)
     return render_template('category.html', category=category)
+
+
+@app.context_processor
+def inject_categories():
+    return {'categories': Category.query.all()}
 
 
 @app.route('/home_id')

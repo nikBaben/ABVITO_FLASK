@@ -50,11 +50,10 @@
                            <div class="col">
                          <select class="form-select" aria-label="form-select">
                               <option selected>Выберите категорию</option>
-                              <option value=""></option>
+                              <option value="1">Техника</option>
                               <option value="2">Животные</option>
                           </select>
                       </div>
-
                   </div>
               </div>
           </nav>
@@ -62,6 +61,9 @@
 {% endblock %}
 {% block content %}{% endblock %}
 {% block body %}
+     <aside class="col-lg-4">
+                {% include 'side_bar.html' %}
+            </aside>
       <h3>Последние публикации</h3>
 <div class="border-danger row row-cols-5 row-cols-md-5 mb-5 text-left">
     {% for el in articles %}
